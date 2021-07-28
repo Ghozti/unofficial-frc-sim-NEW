@@ -6,12 +6,14 @@ public class MotorEncoder {
     private Motor assignedMotor;
     private float id;
     private MotorEncoder master;
+    private boolean masterEncoder;
 
     /*CONSTRUCTORS*/
 
     public MotorEncoder(Motor assignedMotor, float id){
         this.assignedMotor = assignedMotor;
         this.id = id;
+        masterEncoder = true;
     }
 
     public MotorEncoder(Motor assignedMotor, float id,MotorEncoder masterMotorEncoder){
@@ -34,13 +36,14 @@ public class MotorEncoder {
         return master;
     }
 
+    public float getSpeed(){
+        return assignedMotor.getCurrentPower();
+    }
+
     /*SETTERS*/
 
     public void setSpeed(float speed){
-        assignedMotor.setCurrentPower(1);
+        assignedMotor.setCurrentPower(speed);
     }
 
-    public void setSpeed(MotorEncoder encoder){
-        assignedMotor.setCurrentPower(encoder.getAssignedMotor().getCurrentPower());
-    }
 }

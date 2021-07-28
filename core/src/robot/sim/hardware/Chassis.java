@@ -24,4 +24,15 @@ public class Chassis {
         leftSideEncoders.add(encoder);
     }
 
+    public void setRightSideEncodersSpeed(MotorEncoder master){
+        for(MotorEncoder e : rightSideEncoders){
+            e.setSpeed(master.getSpeed());
+        }
+    }
+
+    public void setLeftSideEncodersSpeed(MotorEncoder master){
+        for(MotorEncoder e : leftSideEncoders){
+            e.setSpeed(master.getSpeed());
+        }
+    }
 }
