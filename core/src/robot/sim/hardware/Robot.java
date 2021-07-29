@@ -15,7 +15,7 @@ public class Robot {
     public void buildChassis(Chassis chassis){
         this.chassis = chassis;
 
-        /*
+        /*  ROBOT VISUALIZE
                                   FRONT
                             ________________
                      LEFT   |               |   RIGHT
@@ -27,10 +27,20 @@ public class Robot {
                                   BACK
          */
 
+        //LEFT SIDE
         chassis.addLeftSideEncoder(new MotorEncoder(new Motor(),0));
+        chassis.addLeftSideEncoder(new MotorEncoder(new Motor(),1));
+        chassis.addLeftSideEncoder(new MotorEncoder(new Motor(),2));
+
+        //RIGHT SIDE
+        chassis.addRightEncoders(new MotorEncoder(new Motor(), 0));
+        chassis.addRightEncoders(new MotorEncoder(new Motor(), 1));
+        chassis.addRightEncoders(new MotorEncoder(new Motor(), 2));
     }
 
-    public void driveForward(){
+    public void handleInput(){
 
     }
+
+
 }
