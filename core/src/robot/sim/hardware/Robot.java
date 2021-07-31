@@ -1,5 +1,8 @@
 package robot.sim.hardware;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
+
 public class Robot {
 
     float currentSpeed;
@@ -39,9 +42,17 @@ public class Robot {
     }
 
     public void handleInput(){
+        if(Gdx.input.isKeyPressed(Input.Keys.W)){
 
+        }
+        if(Gdx.input.isKeyPressed(Input.Keys.A)){
 
+        }
+        if(Gdx.input.isKeyPressed(Input.Keys.S)){
+
+        }
+        if(Gdx.input.isKeyPressed(Input.Keys.D)){
+
+        }
     }
-
-
 }
