@@ -55,4 +55,20 @@ public class Robot {
 
         }
     }
+
+    public void driveForward(){// ^
+
+    }
+
+    public void driveBack(){//V
+
+    }
+
+    public void driveRight(){//>
+
+    }
+
+    public void driveLeft(){//<
+
+    }
 }
