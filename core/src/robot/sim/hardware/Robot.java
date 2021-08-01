@@ -65,7 +65,11 @@ public class Robot {
     }
 
     public void driveBack(){//V
+        chassis.leftSideEncoders.get(0).setSpeed(-1);
+        chassis.setLeftSideEncodersSpeed(chassis.leftSideEncoders.get(0));
 
+        chassis.rightSideEncoders.get(0).setSpeed(-1);
+        chassis.setRightSideEncodersSpeed(chassis.rightSideEncoders.get(0));
     }
 
     public void driveRight(){//>
