@@ -2,6 +2,7 @@ package robot.sim.hardware;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 public class Robot {
 
@@ -10,7 +11,11 @@ public class Robot {
     Chassis chassis;
     float width = 18f, length = 30f;
 
-    public Robot(String name){
+    //graphics
+    TextureRegion texture;
+    float x,y;
+
+    public Robot(String name, TextureRegion region){
         this.name = name;
         currentSpeed = 0;
     }
