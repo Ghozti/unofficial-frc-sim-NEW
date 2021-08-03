@@ -9,15 +9,31 @@ public class Robot {
     float currentSpeed;
     String name;
     Chassis chassis;
-    float width = 18f, length = 30f;
 
     //graphics
     TextureRegion texture;
     float x,y;
+    float width = 18f, length = 30f;
 
     public Robot(String name, TextureRegion region){
         this.name = name;
         currentSpeed = 0;
+    }
+
+    public float getX(){
+        return x;
+    }
+
+    public float getY(){
+        return y;
+    }
+
+    public float getWidth(){
+        return width;
+    }
+
+    public float getLength(){
+        return length;
     }
 
     public void buildChassis(Chassis chassis){

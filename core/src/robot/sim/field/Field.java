@@ -1,5 +1,6 @@
 package robot.sim.field;
 
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 import java.awt.*;
@@ -9,6 +10,7 @@ public class Field {
     //graphics
     private TextureRegion texture;
     float width,height;
+    SpriteBatch batch;
 
     //boundingboxes
     private Rectangle pole0, pole1,pole2,pole3;
@@ -22,7 +24,7 @@ public class Field {
     }
 
     public void render(){
-
+        //batch.draw();
     }
 
 }
