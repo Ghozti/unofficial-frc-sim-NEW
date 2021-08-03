@@ -13,4 +13,16 @@ public class Field {
     //boundingboxes
     private Rectangle pole0, pole1,pole2,pole3;
 
+    //field robot
+    Robot robot;
+    
+    
+    public Field(Robot robot){
+        this.robot = robot;
+    }
+
+    public void render(){
+
+    }
+
 }
