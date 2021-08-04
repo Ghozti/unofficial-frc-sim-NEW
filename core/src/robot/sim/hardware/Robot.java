@@ -20,6 +20,10 @@ public class Robot {
         currentSpeed = 0;
     }
 
+    public TextureRegion getTexture(){
+        return texture;
+    }
+
     public float getX(){
         return x;
     }

@@ -16,7 +16,7 @@ public class Field {
     private Rectangle pole0, pole1,pole2,pole3;
 
     //field robot
-    Robot robot;
+    robot.sim.hardware.Robot robot;
     
     
     public Field(Robot robot){
@@ -24,7 +24,7 @@ public class Field {
     }
 
     public void render(){
-        //batch.draw();
+        batch.draw(robot.getTexture(),robot.getX(),robot.getY(),robot.getWidth(),robot.getLength());//draws robot
     }
 
 }
