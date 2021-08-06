@@ -1,5 +1,6 @@
 package robot.sim.field;
 
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import robot.sim.hardware.Robot;
@@ -9,7 +10,7 @@ import java.awt.*;
 public class Field {
 
     //graphics
-    private TextureRegion texture;
+    private Texture texture;
     float width,height;
     SpriteBatch batch;
 
@@ -21,10 +22,11 @@ public class Field {
     
     public Field(Robot robot){
         this.robot = robot;
+        texture = new Texture("infinite-recharge.jpg");
     }
 
     public void render(){
         batch.draw(robot.getTexture(),robot.getX(),robot.getY(),robot.getWidth(),robot.getLength());//draws robot
-        batch.draw(texture,0,0,1920,1080);//draws field
+        batch.draw(texture,0,0,1280,720);//draws field
     }
 }
