@@ -2,9 +2,7 @@ package robot.sim.field;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import robot.sim.hardware.Robot;
-
 import java.awt.*;
 
 public class Field {
