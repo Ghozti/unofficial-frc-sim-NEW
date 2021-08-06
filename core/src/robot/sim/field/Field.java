@@ -34,6 +34,7 @@ public class Field {
 
     public void render(){
         batch.begin();
+        robot.handleInput();
         batch.draw(texture,0,0,1280,720);//draws field
         batch.draw(robot.getTexture(),robot.getX(),robot.getY(),robot.getWidth(),robot.getLength());//draws robot
         batch.end();

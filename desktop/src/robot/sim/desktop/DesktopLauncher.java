@@ -10,7 +10,7 @@ public class DesktopLauncher {
 		new LwjglApplication(new Game(), config);
 
 		config.title = "frc robot sim";
-		config.width = 1920;
-		config.height = 1080;
+		config.width = 1280;
+		config.height = 720;
 	}
 }

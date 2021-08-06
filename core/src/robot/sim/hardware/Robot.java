@@ -14,7 +14,7 @@ public class Robot {
     //graphics
     Texture texture;
     float x,y;
-    float width = 18f, length = 30f;
+    float width = 100f, length = 100f;
 
     public Robot(String name){
         this.name = name;
@@ -70,40 +70,16 @@ public class Robot {
 
     public void handleInput(){
         if(Gdx.input.isKeyPressed(Input.Keys.W)){
-
+            y += 10;
         }
         if(Gdx.input.isKeyPressed(Input.Keys.A)){
-
+            x += -10;
         }
         if(Gdx.input.isKeyPressed(Input.Keys.S)){
-
+            y += -10;
         }
         if(Gdx.input.isKeyPressed(Input.Keys.D)){
-
+            x += 10;
         }
-    }
-
-    public void driveForward(){// ^
-        chassis.leftSideEncoders.get(0).setSpeed(1);
-        chassis.setLeftSideEncodersSpeed(chassis.leftSideEncoders.get(0));
-
-        chassis.rightSideEncoders.get(0).setSpeed(1);
-        chassis.setRightSideEncodersSpeed(chassis.rightSideEncoders.get(0));
-    }
-
-    public void driveBack(){//V
-        chassis.leftSideEncoders.get(0).setSpeed(-1);
-        chassis.setLeftSideEncodersSpeed(chassis.leftSideEncoders.get(0));
-
-        chassis.rightSideEncoders.get(0).setSpeed(-1);
-        chassis.setRightSideEncodersSpeed(chassis.rightSideEncoders.get(0));
-    }
-
-    public void driveRight(){//>
-
-    }
-
-    public void driveLeft(){//<
-
     }
 }
