@@ -21,10 +21,21 @@ public class Field {
     public Field(Robot robot){
         this.robot = robot;
         texture = new Texture("infinite-recharge.jpg");
+        batch = new SpriteBatch();
+    }
+
+    public float getWidth(){
+        return 1280;
+    }
+
+    public float getHeight(){
+        return 720;
     }
 
     public void render(){
-        batch.draw(robot.getTexture(),robot.getX(),robot.getY(),robot.getWidth(),robot.getLength());//draws robot
+        batch.begin();
         batch.draw(texture,0,0,1280,720);//draws field
+        batch.draw(robot.getTexture(),robot.getX(),robot.getY(),robot.getWidth(),robot.getLength());//draws robot
+        batch.end();
     }
 }

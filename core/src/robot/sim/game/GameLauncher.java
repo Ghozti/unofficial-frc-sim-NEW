@@ -2,9 +2,32 @@ package robot.sim.game;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.g2d.Batch;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.utils.viewport.StretchViewport;
+import com.badlogic.gdx.utils.viewport.Viewport;
+import robot.sim.field.Field;
+import robot.sim.hardware.Robot;
 
 public class GameLauncher implements Screen {
+
+    Robot robot;
+    Field field;
+
+    Batch batch;
+    Camera camera;
+    Viewport viewport;
+
+    public GameLauncher(){
+        robot = new Robot("sol");
+        field = new Field(robot);
+        batch = new SpriteBatch();
+        camera = new OrthographicCamera();
+        viewport = new StretchViewport(field.getWidth(),field.getHeight(),camera);
+    }
 
     @Override
     public void show() {
@@ -15,11 +38,16 @@ public class GameLauncher implements Screen {
     public void render(float delta) {
         Gdx.gl.glClearColor(.128f,.128f,.128f,.1f);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+
+        batch.begin();
+        field.render();
+        batch.end();
     }
 
     @Override
     public void resize(int width, int height) {
-
+        viewport.update(width,height,true);//tells the viewport to update accordingly
+        batch.setProjectionMatrix(camera.combined);
     }
 
     @Override
