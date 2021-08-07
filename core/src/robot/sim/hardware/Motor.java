@@ -8,14 +8,14 @@ public class Motor {
 
     //fields
     private float currentPower;
-    private float currentRPM;
+    private float currentSpeed;
     private boolean inverted;
 
     public float getMaxPower(){return maxPower;}
     public float getMaxRPM(){return maxRPM;}
 
     public float getCurrentPower(){return currentPower;}
-    public float getCurrentRPM(){return currentRPM;}
+    public float getCurrentSpeed(){return currentSpeed;}
     public boolean getInverted(){return inverted;}
 
     public void setCurrentPower(float p){

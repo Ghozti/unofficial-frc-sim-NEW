@@ -70,7 +70,7 @@ public class Robot {
 
     public void handleInput(){
         if(Gdx.input.isKeyPressed(Input.Keys.W)){
-            y += 10;
+            y += 10;// TODO work on encoders to manipulate the speed and climb of the robot
         }
         if(Gdx.input.isKeyPressed(Input.Keys.A)){
             x += -10;
