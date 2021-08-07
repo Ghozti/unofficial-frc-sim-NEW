@@ -4,7 +4,8 @@ public class Motor {
 
     //constants
     private final float maxPower = 1;
-    private final float maxRPM = 5675;
+    private final float maxSpeed = 10;//in pixels
+    private final float climb = 2000;// 2 seconds to go from 0 to 10 in pixels
 
     //fields
     private float currentPower;
@@ -12,8 +13,6 @@ public class Motor {
     private boolean inverted;
 
     public float getMaxPower(){return maxPower;}
-    public float getMaxRPM(){return maxRPM;}
-
     public float getCurrentPower(){return currentPower;}
     public float getCurrentSpeed(){return currentSpeed;}
     public boolean getInverted(){return inverted;}
