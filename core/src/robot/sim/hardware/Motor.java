@@ -17,6 +17,16 @@ public class Motor {
     public float getCurrentSpeed(){return currentSpeed;}
     public boolean getInverted(){return inverted;}
 
+    //10 px per sec
+    //5px in half sec
+    //2.5 in 1/4 sec
+
+    public void updateSpeed(float delta){
+        if(delta == 500){
+
+        }
+    }
+
     public void setCurrentPower(float p){
         currentPower = p;
     }
