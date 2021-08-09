@@ -32,9 +32,9 @@ public class Field {
         return 720;
     }
 
-    public void render(){
+    public void render(float delta){
         batch.begin();
-        robot.handleInput();
+        robot.handleInput(delta);
         batch.draw(texture,0,0,1280,720);//draws field
         batch.draw(robot.getTexture(),robot.getX(),robot.getY(),robot.getWidth(),robot.getLength());//draws robot
         batch.end();

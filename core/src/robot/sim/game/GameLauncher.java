@@ -10,6 +10,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import robot.sim.field.Field;
+import robot.sim.hardware.Chassis;
 import robot.sim.hardware.Robot;
 
 public class GameLauncher implements Screen {
@@ -23,6 +24,7 @@ public class GameLauncher implements Screen {
 
     public GameLauncher(){
         robot = new Robot("sol");
+        robot.buildChassis(new Chassis("west coast drive"));
         field = new Field(robot);
         batch = new SpriteBatch();
         camera = new OrthographicCamera();
@@ -40,7 +42,7 @@ public class GameLauncher implements Screen {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         batch.begin();
-        field.render();
+        field.render(delta);
         batch.end();
     }
 

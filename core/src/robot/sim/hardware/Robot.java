@@ -68,7 +68,9 @@ public class Robot {
         chassis.addRightEncoders(new MotorEncoder(new Motor(), 2));
     }
 
-    public void handleInput(){
+    public void handleInput(float delta){
+        chassis.rightSideEncoders.get(0).getAssignedMotor().updateSpeed(delta);
+        chassis.leftSideEncoders.get(0).getAssignedMotor().updateSpeed(delta);
         if(Gdx.input.isKeyPressed(Input.Keys.W)){
             y += chassis.leftSideEncoders.get(0).getSpeed() + chassis.rightSideEncoders.get(0).getSpeed();// TODO work on encoders to manipulate the speed and climb of the robot
         }
