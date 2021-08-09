@@ -23,7 +23,16 @@ public class Motor {
 
     public void updateSpeed(float delta){
         if(delta == 500){
-
+            currentSpeed = 2.5f;
+        }
+        if (delta == 1000){
+            currentSpeed = 5;
+        }
+        if (delta == 1500){
+            currentSpeed = 7.5f;
+        }
+        if (delta == 2000){
+            currentSpeed = 10;
         }
     }
 
