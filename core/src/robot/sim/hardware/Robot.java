@@ -70,16 +70,16 @@ public class Robot {
 
     public void handleInput(){
         if(Gdx.input.isKeyPressed(Input.Keys.W)){
-            y += 10;// TODO work on encoders to manipulate the speed and climb of the robot
+            y += chassis.leftSideEncoders.get(0).getSpeed() + chassis.rightSideEncoders.get(0).getSpeed();// TODO work on encoders to manipulate the speed and climb of the robot
         }
         if(Gdx.input.isKeyPressed(Input.Keys.A)){
-            x += -10;
+            x += chassis.leftSideEncoders.get(0).getAssignedMotor().getInvertedSpeed() + chassis.rightSideEncoders.get(0).getAssignedMotor().getInvertedSpeed();
         }
         if(Gdx.input.isKeyPressed(Input.Keys.S)){
-            y += -10;
+            y += chassis.leftSideEncoders.get(0).getAssignedMotor().getInvertedSpeed() + chassis.rightSideEncoders.get(0).getAssignedMotor().getInvertedSpeed();
         }
         if(Gdx.input.isKeyPressed(Input.Keys.D)){
-            x += 10;
+            x += chassis.leftSideEncoders.get(0).getSpeed() + chassis.rightSideEncoders.get(0).getSpeed();
         }
     }
 }

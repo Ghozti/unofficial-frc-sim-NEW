@@ -37,7 +37,7 @@ public class MotorEncoder {
     }
 
     public float getSpeed(){
-        return assignedMotor.getCurrentPower();
+        return assignedMotor.getCurrentSpeed();
     }
 
     /*SETTERS*/

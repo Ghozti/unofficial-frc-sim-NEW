@@ -40,7 +40,8 @@ public class Motor {
         currentPower = p;
     }
 
-    public void setInverted(boolean inverted){
-        this.inverted = inverted;
+    public float getInvertedSpeed(){
+        inverted = true;
+        return -currentSpeed;
     }
 }
