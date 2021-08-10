@@ -69,18 +69,24 @@ public class Robot {
     }
 
     public void handleInput(float delta){
-        chassis.rightSideEncoders.get(0).getAssignedMotor().updateSpeed(delta);
-        chassis.leftSideEncoders.get(0).getAssignedMotor().updateSpeed(delta);
         if(Gdx.input.isKeyPressed(Input.Keys.W)){
+            chassis.rightSideEncoders.get(0).getAssignedMotor().updateSpeed(delta);
+            chassis.leftSideEncoders.get(0).getAssignedMotor().updateSpeed(delta);
             y += chassis.leftSideEncoders.get(0).getSpeed() + chassis.rightSideEncoders.get(0).getSpeed();// TODO work on encoders to manipulate the speed and climb of the robot
         }
         if(Gdx.input.isKeyPressed(Input.Keys.A)){
+            chassis.rightSideEncoders.get(0).getAssignedMotor().updateSpeed(delta);
+            chassis.leftSideEncoders.get(0).getAssignedMotor().updateSpeed(delta);
             x += chassis.leftSideEncoders.get(0).getAssignedMotor().getInvertedSpeed() + chassis.rightSideEncoders.get(0).getAssignedMotor().getInvertedSpeed();
         }
         if(Gdx.input.isKeyPressed(Input.Keys.S)){
+            chassis.rightSideEncoders.get(0).getAssignedMotor().updateSpeed(delta);
+            chassis.leftSideEncoders.get(0).getAssignedMotor().updateSpeed(delta);
             y += chassis.leftSideEncoders.get(0).getAssignedMotor().getInvertedSpeed() + chassis.rightSideEncoders.get(0).getAssignedMotor().getInvertedSpeed();
         }
         if(Gdx.input.isKeyPressed(Input.Keys.D)){
+            chassis.rightSideEncoders.get(0).getAssignedMotor().updateSpeed(delta);
+            chassis.leftSideEncoders.get(0).getAssignedMotor().updateSpeed(delta);
             x += chassis.leftSideEncoders.get(0).getSpeed() + chassis.rightSideEncoders.get(0).getSpeed();
         }
     }
