@@ -24,16 +24,16 @@ public class Motor {
     public void updateSpeed(float delta){
         System.out.println(delta);//TODO make this update acoordingly to it's side. this means that even if the dekta reaches 1500 for the right side the delta time has to reset if the other side is pressed
         if(delta <= .5){
-            currentSpeed = 2.5f;
+            currentSpeed = 1.25f;
         }
         if (delta <= 1.0 && delta > .5){
-            currentSpeed = 5;
+            currentSpeed = 2.5f;
         }
         if (delta <= 1.5 && delta > 1.0){
-            currentSpeed = 7.5f;
+            currentSpeed = 3.75f;
         }
         if (delta <= 2.0 && delta > 1.5){
-            currentSpeed = 10;
+            currentSpeed = 5;
         }
     }
 
