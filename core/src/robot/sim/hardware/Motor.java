@@ -22,7 +22,7 @@ public class Motor {
     //2.5 in 1/4 sec
 
     public void updateSpeed(float delta){
-        System.out.println(delta);//TODO make this update acoordingly to it's side. this means that even if the dekta reaches 1500 for the right side the delta time has to reset if the other side is pressed
+        //TODO make this update acoordingly to it's side. this means that even if the dekta reaches 1500 for the right side the delta time has to reset if the other side is pressed
         if(delta <= .5){
             currentSpeed = 1.25f;
         }
@@ -44,5 +44,9 @@ public class Motor {
     public float getInvertedSpeed(){
         inverted = true;
         return -currentSpeed;
+    }
+
+    public void resetSpeed(){
+        currentSpeed = 0;
     }
 }
