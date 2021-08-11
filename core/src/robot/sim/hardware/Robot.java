@@ -75,6 +75,7 @@ public class Robot {
             if (!lastPressed.equals("w")){
                 chassis.rightSideEncoders.get(0).getAssignedMotor().resetSpeed();
                 chassis.leftSideEncoders.get(0).getAssignedMotor().resetSpeed();
+                delta = 0;
             }
             lastPressed = "w";
             chassis.rightSideEncoders.get(0).getAssignedMotor().updateSpeed(delta);
@@ -85,6 +86,7 @@ public class Robot {
             if (!lastPressed.equals("a")){
                 chassis.rightSideEncoders.get(0).getAssignedMotor().resetSpeed();
                 chassis.leftSideEncoders.get(0).getAssignedMotor().resetSpeed();
+                delta = 0;
             }
             lastPressed = "a";
             chassis.rightSideEncoders.get(0).getAssignedMotor().updateSpeed(delta);
@@ -95,6 +97,7 @@ public class Robot {
             if (!lastPressed.equals("s")){
                 chassis.rightSideEncoders.get(0).getAssignedMotor().resetSpeed();
                 chassis.leftSideEncoders.get(0).getAssignedMotor().resetSpeed();
+                delta = 0;
             }
             lastPressed = "s";
             chassis.rightSideEncoders.get(0).getAssignedMotor().updateSpeed(delta);
@@ -102,9 +105,10 @@ public class Robot {
             y += chassis.leftSideEncoders.get(0).getAssignedMotor().getInvertedSpeed() + chassis.rightSideEncoders.get(0).getAssignedMotor().getInvertedSpeed();
         }
         if(Gdx.input.isKeyPressed(Input.Keys.D)){
-            if (!lastPressed.equals("dddddddd")){
+            if (!lastPressed.equals("d")){
                 chassis.rightSideEncoders.get(0).getAssignedMotor().resetSpeed();
                 chassis.leftSideEncoders.get(0).getAssignedMotor().resetSpeed();
+                delta = 0;
             }
             lastPressed = "d";
             chassis.rightSideEncoders.get(0).getAssignedMotor().updateSpeed(delta);
