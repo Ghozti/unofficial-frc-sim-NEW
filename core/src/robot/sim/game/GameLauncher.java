@@ -36,16 +36,13 @@ public class GameLauncher implements Screen {
 
     }
 
-    float ddelta;
-
     @Override
     public void render(float delta) {
-        ddelta += delta;
         Gdx.gl.glClearColor(.128f,.128f,.128f,.1f);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         batch.begin();
-        field.render(ddelta);
+        field.render(delta);
         batch.end();
     }
 
