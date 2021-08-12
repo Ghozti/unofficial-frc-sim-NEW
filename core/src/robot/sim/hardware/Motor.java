@@ -22,17 +22,8 @@ public class Motor {
     //2.5 in 1/4 sec
 
     public void updateSpeed(float delta){
-        if(delta <= .5){
-            currentSpeed = 1.25f;
-        }
-        if (delta <= 1.0 && delta > .5){
-            currentSpeed = 2.5f;
-        }
-        if (delta <= 1.5 && delta > 1.0){
-            currentSpeed = 3.75f;
-        }
-        if (delta <= 2.0 && delta > 1.5){
-            currentSpeed = 5;
+        if(delta <= 2 || currentSpeed == 5){
+            currentSpeed += .2;
         }
     }
 
