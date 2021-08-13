@@ -4,6 +4,9 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.math.Rectangle;
+
+import java.awt.*;
 
 public class Robot {
 
@@ -11,7 +14,8 @@ public class Robot {
     String name;
     Chassis chassis;
 
-    //graphics
+    //graphicsa
+    com.badlogic.gdx.math.Rectangle hitbox = new Rectangle();//hitbox
     Texture texture;
     float x,y;
     float width = 100f, length = 100f;
