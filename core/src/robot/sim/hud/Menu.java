@@ -3,6 +3,11 @@ package robot.sim.hud;
 import com.badlogic.gdx.Screen;
 
 public class Menu implements Screen {
+
+    String alliance;
+    float[] position;//once the player chooses their alliance position this will be filled in
+    float time;//time in miliseconds
+
     @Override
     public void show() {
 
