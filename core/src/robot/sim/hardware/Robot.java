@@ -124,13 +124,20 @@ public class Robot {
             x += chassis.leftSideEncoders.get(0).getSpeed() + chassis.rightSideEncoders.get(0).getSpeed();
         }
         hitbox.setPosition(getX(),getY());
+        validatePosition();
     }
 
     private void validatePosition(){
-        if(getY() <= 0){
+        if(getX() <= 0){
+            setX(0);
+        }else if(getX() >= 1179) {
+            setX(1179);
+        }
 
-        }else if(getY() == 1181){
-
+        if (getY() >= 619){
+            setY(619);
+        }else if(getY() <= .7){
+            setY(.7f);
         }
     }
 }
