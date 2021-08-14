@@ -22,6 +22,7 @@ public class Robot {
 
     public Robot(String name){
         this.name = name;
+        hitbox = new Rectangle(getX(),getY(),getWidth(),getLength());
         currentSpeed = 0;
         texture = new Texture("sol.png");
     }
@@ -118,5 +119,10 @@ public class Robot {
             chassis.leftSideEncoders.get(0).getAssignedMotor().updateSpeed(ddelta);
             x += chassis.leftSideEncoders.get(0).getSpeed() + chassis.rightSideEncoders.get(0).getSpeed();
         }
+        hitbox.setPosition(getX(),getY());
+    }
+
+    private void validatePosition(){
+
     }
 }

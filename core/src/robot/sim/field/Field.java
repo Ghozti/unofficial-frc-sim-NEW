@@ -34,6 +34,7 @@ public class Field {
 
     public void render(float delta){
         batch.begin();
+        System.out.println(robot.getX() + "***" + robot.getY());
         robot.handleInput(delta);
         batch.draw(texture,0,0,1280,720);//draws field
         batch.draw(robot.getTexture(),robot.getX(),robot.getY(),robot.getWidth(),robot.getLength());//draws robot
