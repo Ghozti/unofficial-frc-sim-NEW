@@ -47,6 +47,10 @@ public class Robot {
         return length;
     }
 
+    public void setY(float y){this.y = y;}
+
+    public void setX(float x){this.x = x;}
+
     public void buildChassis(Chassis chassis){
         this.chassis = chassis;
 
@@ -123,6 +127,10 @@ public class Robot {
     }
 
     private void validatePosition(){
+        if(getY() <= 0){
 
+        }else if(getY() == 1181){
+
+        }
     }
 }
