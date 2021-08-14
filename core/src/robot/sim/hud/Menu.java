@@ -2,7 +2,7 @@ package robot.sim.hud;
 
 import com.badlogic.gdx.Screen;
 
-public class HUD implements Screen {
+public class Menu implements Screen {
     @Override
     public void show() {
 
