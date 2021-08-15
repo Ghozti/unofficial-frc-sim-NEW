@@ -7,6 +7,8 @@ public class Menu implements Screen {
     String alliance;
     float[] position;//once the player chooses their alliance position this will be filled in
     float time;//time in miliseconds
+    boolean unlimitedTime;
+    String periodicType;//autonomous or teleop
 
     @Override
     public void show() {
