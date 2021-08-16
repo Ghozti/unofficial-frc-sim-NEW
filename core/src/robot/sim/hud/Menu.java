@@ -1,14 +1,22 @@
 package robot.sim.hud;
 
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 public class Menu implements Screen {
 
+    //FIELDS
+    boolean exitScreen;//will determine if the player is ready to exit the main menu
     String alliance;
     float[] position;//once the player chooses their alliance position this will be filled in
     float time;//time in miliseconds
     boolean unlimitedTime;
     String periodicType;//autonomous or teleop
+
+    //graphics
+    Texture background;
+
 
     @Override
     public void show() {
