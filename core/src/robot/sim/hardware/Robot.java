@@ -140,4 +140,8 @@ public class Robot {
             setY(.7f);
         }
     }
+
+    public void startAutonomousPeriodic(){
+
+    }
 }
