@@ -13,6 +13,7 @@ public class Robot {
     float currentSpeed;
     String name;
     Chassis chassis;
+    String currentPeriodic;
 
     //graphicsa
     com.badlogic.gdx.math.Rectangle hitbox = new Rectangle();//hitbox
@@ -142,6 +143,8 @@ public class Robot {
     }
 
     public void startAutonomousPeriodic(){
+        while(currentPeriodic.equals("auto")){
 
+        }
     }
 }
