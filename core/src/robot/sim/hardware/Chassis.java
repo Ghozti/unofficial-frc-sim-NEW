@@ -40,22 +40,4 @@ public class Chassis {
             e.setSpeed(master.getSpeed());
         }
     }
-
-    //AUTONOMOUS
-
-    public void driveForward(){
-
-    }
-
-    public void driveBack(){
-
-    }
-
-    public void driveRight(){
-
-    }
-
-    public void driveLeft(){
-
-    }
 }
