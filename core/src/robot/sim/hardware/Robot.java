@@ -150,6 +150,10 @@ public class Robot {
 
     //AUTONOMOUS
 
+    public void auto_init(){
+        //write autonomous code here
+    }
+
     public void a_driveForward(float mil,float delta){
         while (delta < mil){
             x += x += chassis.leftSideEncoders.get(0).getSpeed() + chassis.rightSideEncoders.get(0).getSpeed();
