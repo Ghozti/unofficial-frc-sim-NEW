@@ -76,7 +76,7 @@ public class Robot {
         chassis.addRightEncoders(new MotorEncoder(new Motor(), 0));
         chassis.addRightEncoders(new MotorEncoder(new Motor(), 1));
         chassis.addRightEncoders(new MotorEncoder(new Motor(), 2));
-        System.out.println("yay new pc");
+        //test commit
     }
 
     private String lastPressed = "";
