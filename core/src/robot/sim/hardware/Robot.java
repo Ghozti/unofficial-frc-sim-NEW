@@ -161,25 +161,25 @@ public class Robot {
 
     public void a_driveForward(float mil,float delta){
         while (delta < mil){
-            x += x += chassis.leftSideEncoders.get(0).getSpeed() + chassis.rightSideEncoders.get(0).getSpeed();
+            x += chassis.leftSideEncoders.get(0).getSpeed() + chassis.rightSideEncoders.get(0).getSpeed();
         }
     }
 
     public void a_driveBack(float mil,float delta){
         while (delta < mil){
-            x += x += chassis.leftSideEncoders.get(0).getSpeed() + chassis.rightSideEncoders.get(0).getSpeed();
+            x += chassis.leftSideEncoders.get(0).getSpeed() + chassis.rightSideEncoders.get(0).getSpeed();
         }
     }
 
     public void a_driveUp(float mil,float delta){
         while (delta < mil){
-            y += x += chassis.leftSideEncoders.get(0).getSpeed() + chassis.rightSideEncoders.get(0).getSpeed();
+            y += chassis.leftSideEncoders.get(0).getSpeed() + chassis.rightSideEncoders.get(0).getSpeed();
         }
     }
 
     public void a_driveDown(float mil,float delta){
         while (delta < mil){
-            y += x += chassis.leftSideEncoders.get(0).getSpeed() + chassis.rightSideEncoders.get(0).getSpeed();
+            y += chassis.leftSideEncoders.get(0).getSpeed() + chassis.rightSideEncoders.get(0).getSpeed();
         }
     }
 }
