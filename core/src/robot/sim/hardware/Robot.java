@@ -145,9 +145,11 @@ public class Robot {
         }
     }
 
-    public void startAutonomousPeriodic(){
+    public void startAutonomousPeriodic(float delta){
+        float t_delta = 0;
+        t_delta += delta;
         while(currentPeriodic.equals("auto")){
-
+            a_driveForward(1000,t_delta);
         }
     }
 
