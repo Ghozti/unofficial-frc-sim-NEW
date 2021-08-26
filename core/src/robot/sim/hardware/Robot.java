@@ -14,6 +14,7 @@ public class Robot {
     String name;
     Chassis chassis;
     String currentPeriodic;
+    boolean auto = true;//wether or not autonomous is still active or not
 
     //graphicsa
     com.badlogic.gdx.math.Rectangle hitbox = new Rectangle();//hitbox
@@ -47,6 +48,8 @@ public class Robot {
     public float getLength(){
         return length;
     }
+
+    public boolean getAuto(){return auto;}
 
     public void setY(float y){this.y = y;}
 
@@ -145,40 +148,34 @@ public class Robot {
         }
     }
 
+    //AUTONOMOUS
+
     public void startAutonomousPeriodic(float delta){
         float t_delta = 0;
         t_delta += delta;
-        while(currentPeriodic.equals("auto")){
-            a_driveForward(1000,t_delta);
-        }
-    }
-
-    //AUTONOMOUS
-
-    public void auto_init(){
-        //write autonomous code here
+        a_driveBack(5000,t_delta);
     }
 
     public void a_driveForward(float mil,float delta){
-        while (delta < mil){
+        if (delta < mil){
             x += chassis.leftSideEncoders.get(0).getSpeed() + chassis.rightSideEncoders.get(0).getSpeed();
         }
     }
 
     public void a_driveBack(float mil,float delta){
-        while (delta < mil){
+        if (delta < mil){
             x += chassis.leftSideEncoders.get(0).getSpeed() + chassis.rightSideEncoders.get(0).getSpeed();
         }
     }
 
     public void a_driveUp(float mil,float delta){
-        while (delta < mil){
+        if (delta < mil){
             y += chassis.leftSideEncoders.get(0).getSpeed() + chassis.rightSideEncoders.get(0).getSpeed();
         }
     }
 
     public void a_driveDown(float mil,float delta){
-        while (delta < mil){
+        if (delta < mil){
             y += chassis.leftSideEncoders.get(0).getSpeed() + chassis.rightSideEncoders.get(0).getSpeed();
         }
     }
