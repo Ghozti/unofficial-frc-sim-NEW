@@ -158,25 +158,33 @@ public class Robot {
 
     public void a_driveForward(float mil,float delta){
         if (delta < mil){
+            chassis.rightSideEncoders.get(0).getAssignedMotor().updateSpeed(delta);
+            chassis.leftSideEncoders.get(0).getAssignedMotor().updateSpeed(delta);
             x += chassis.leftSideEncoders.get(0).getSpeed() + chassis.rightSideEncoders.get(0).getSpeed();
         }
     }
 
     public void a_driveBack(float mil,float delta){
         if (delta < mil){
-            x += chassis.leftSideEncoders.get(0).getSpeed() + chassis.rightSideEncoders.get(0).getSpeed();
+            chassis.rightSideEncoders.get(0).getAssignedMotor().updateSpeed(delta);
+            chassis.leftSideEncoders.get(0).getAssignedMotor().updateSpeed(delta);
+            x += chassis.leftSideEncoders.get(0).getAssignedMotor().getInvertedSpeed() + chassis.rightSideEncoders.get(0).getAssignedMotor().getInvertedSpeed();
         }
     }
 
     public void a_driveUp(float mil,float delta){
         if (delta < mil){
+            chassis.rightSideEncoders.get(0).getAssignedMotor().updateSpeed(delta);
+            chassis.leftSideEncoders.get(0).getAssignedMotor().updateSpeed(delta);
             y += chassis.leftSideEncoders.get(0).getSpeed() + chassis.rightSideEncoders.get(0).getSpeed();
         }
     }
 
     public void a_driveDown(float mil,float delta){
         if (delta < mil){
-            y += chassis.leftSideEncoders.get(0).getSpeed() + chassis.rightSideEncoders.get(0).getSpeed();
+            chassis.rightSideEncoders.get(0).getAssignedMotor().updateSpeed(delta);
+            chassis.leftSideEncoders.get(0).getAssignedMotor().updateSpeed(delta);
+            y += chassis.leftSideEncoders.get(0).getAssignedMotor().getInvertedSpeed() + chassis.rightSideEncoders.get(0).getAssignedMotor().getInvertedSpeed();
         }
     }
 }
