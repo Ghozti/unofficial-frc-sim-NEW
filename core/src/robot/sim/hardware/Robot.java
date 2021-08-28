@@ -149,7 +149,6 @@ public class Robot {
     }
 
     //AUTONOMOUS
-    boolean commandActive = false;
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     /////////////////////////////////////***WRITE AUTONOMOUS CODE BELOW VVVVVVV***//////////////////////////////////////
@@ -160,55 +159,62 @@ public class Robot {
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     float commandTimmer = 0;
+    boolean drive_f, drive_b, drive_u, drive_d;
 
     public void a_driveForward(float mil,float delta){
-        if (commandTimmer < mil && !commandActive){
+        if (commandTimmer < mil){
             commandTimmer += delta;
-            commandActive = true;
+            drive_f = true;
             chassis.rightSideEncoders.get(0).getAssignedMotor().updateSpeed(delta);
             chassis.leftSideEncoders.get(0).getAssignedMotor().updateSpeed(delta);
             x += chassis.leftSideEncoders.get(0).getSpeed() + chassis.rightSideEncoders.get(0).getSpeed();
         }else {
-            commandActive = false;
+            drive_f = false;
             commandTimmer = 0;
         }
     }
 
+    boolean dbUsed = false;
     public void a_driveBack(float mil,float delta){
-        if (commandTimmer <= mil && !commandActive){
+        if (!drive_b && commandTimmer <= mil && !dbUsed){
+            drive_b = true;
+        }
+        if (commandTimmer <= mil && drive_b){
+            //System.out.println(delta);
+            System.out.println(commandTimmer);
             commandTimmer += delta;
-            commandActive = true;
             chassis.rightSideEncoders.get(0).getAssignedMotor().updateSpeed(delta);
             chassis.leftSideEncoders.get(0).getAssignedMotor().updateSpeed(delta);
             x += chassis.leftSideEncoders.get(0).getSpeed() + chassis.rightSideEncoders.get(0).getSpeed();
-        }else {
-            commandActive = false;
+        }else if (commandTimmer > mil){
+            drive_b = false;
             commandTimmer = 0;
+            dbUsed = true;
         }
     }
 
     public void a_driveUp(float mil,float delta){
-        if (commandTimmer < mil && !commandActive){
+        if (commandTimmer < mil && drive_u){
             commandTimmer += delta;
-            commandActive = true;
+            drive_u = true;
             chassis.rightSideEncoders.get(0).getAssignedMotor().updateSpeed(delta);
             chassis.leftSideEncoders.get(0).getAssignedMotor().updateSpeed(delta);
             y += chassis.leftSideEncoders.get(0).getSpeed() + chassis.rightSideEncoders.get(0).getSpeed();
         }else {
-            commandActive = false;
+            drive_u = false;
             commandTimmer = 0;
         }
     }
 
     public void a_driveDown(float mil,float delta){
-        if (commandTimmer < mil && !commandActive){
+        if (commandTimmer < mil && drive_d){
             commandTimmer += delta;
-            commandActive = true;
+            drive_d = true;
             chassis.rightSideEncoders.get(0).getAssignedMotor().updateSpeed(delta);
             chassis.leftSideEncoders.get(0).getAssignedMotor().updateSpeed(delta);
             y += chassis.leftSideEncoders.get(0).getAssignedMotor().getInvertedSpeed() + chassis.rightSideEncoders.get(0).getAssignedMotor().getInvertedSpeed();
         }else {
-            commandActive = false;
+            drive_d = false;
             commandTimmer = 0;
         }
     }
