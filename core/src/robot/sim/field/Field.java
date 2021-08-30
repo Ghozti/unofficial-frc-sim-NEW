@@ -34,12 +34,12 @@ public class Field {
 
     public void render(float delta){
         batch.begin();
+        //batch.draw(texture,0,0,1280,720);//draws field
         robot.handleInput(delta);
-        batch.draw(texture,0,0,1280,720);//draws field
         batch.draw(robot.getTexture(),robot.getX(),robot.getY(),robot.getWidth(),robot.getLength());//draws robot
-        if (robot.getAuto()){
-            robot.startAutonomousPeriodic(delta);
-        }
+        //if (robot.getAuto()){
+            //robot.startAutonomousPeriodic(delta);
+        //}
         batch.end();
     }
 }

@@ -17,7 +17,7 @@ public class Robot {
     boolean auto = true;//wether or not autonomous is still active or not
 
     //graphicsa
-    com.badlogic.gdx.math.Rectangle hitbox = new Rectangle();//hitbox
+    com.badlogic.gdx.math.Rectangle hitbox = new Rectangle();//projectile_hitbox
     Texture texture;
     float x,y;
     float width = 100f, length = 100f;
