@@ -27,6 +27,15 @@ public class Shooter {
     }
 
     private void render(){
+        batch.begin();
+        batch.draw(projectile,x,y,width,length);
+        batch.end();
+    }
 
+    private void update(float xchange, float ychange){
+        x += xchange;
+        y += ychange;
+        hitbox.x = x;
+        hitbox.y = y;
     }
 }
