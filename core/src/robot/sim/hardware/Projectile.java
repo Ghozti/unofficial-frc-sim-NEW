@@ -10,6 +10,7 @@ public class Projectile {
     private float x, y, width, height, speed;//dimensions and position
     private Texture texture;
     private Rectangle hitbox;
+    SpriteBatch batch = new SpriteBatch();
 
     public float getX(){return x;}
     public float getY(){return y;}
@@ -18,7 +19,13 @@ public class Projectile {
     public float getSpeed(){return speed;}
     public Rectangle getHitbox(){return hitbox;}
 
-    public void display(Batch batch){
+    public void display(){
+        batch.begin();
         batch.draw(texture,x,y,width,height);
+        batch.end();
+    }
+
+    public void update(String robotFace){
+
     }
 }
