@@ -26,6 +26,15 @@ public class Projectile {
     }
 
     public void update(String robotFace){
-
+        switch (robotFace){
+            case "N":
+                y += speed;
+            case "S" :
+                y += -speed;
+            case "E":
+                x += speed;
+            case "W":
+                x += -speed;
+        }
     }
 }
