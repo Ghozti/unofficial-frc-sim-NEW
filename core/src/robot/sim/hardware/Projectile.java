@@ -1,7 +1,6 @@
 package robot.sim.hardware;
 
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
 
@@ -20,24 +19,25 @@ public class Projectile {
     public Rectangle getHitbox(){return hitbox;}
 
     public Projectile(float x, float y, float width, float height){
-
+        texture = new Texture("pixil-frame-0.png");
+        hitbox = new Rectangle();
+        hitbox.height = height;
+        hitbox.width = width;
     }
 
     public void display(){
+        hitbox.x = x;
+        hitbox.y = y;
         batch.begin();
         batch.draw(texture,x,y,width,height);
         batch.end();
     }
 
-    public void update(String robotFace, float x, float y){
-
-    }
-
     public void moveX(float xchange){
-
+        x += xchange;
     }
 
     public void moveY(float ychange){
-
+        y += ychange;
     }
 }
