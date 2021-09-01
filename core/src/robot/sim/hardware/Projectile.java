@@ -19,22 +19,25 @@ public class Projectile {
     public float getSpeed(){return speed;}
     public Rectangle getHitbox(){return hitbox;}
 
+    public Projectile(float x, float y, float width, float height){
+
+    }
+
     public void display(){
         batch.begin();
         batch.draw(texture,x,y,width,height);
         batch.end();
     }
 
-    public void update(String robotFace){
-        switch (robotFace){
-            case "N":
-                y += speed;
-            case "S" :
-                y += -speed;
-            case "E":
-                x += speed;
-            case "W":
-                x += -speed;
-        }
+    public void update(String robotFace, float x, float y){
+
+    }
+
+    public void moveX(float xchange){
+
+    }
+
+    public void moveY(float ychange){
+
     }
 }

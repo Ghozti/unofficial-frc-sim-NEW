@@ -1,6 +1,8 @@
 package robot.sim.hardware;
 
-import java.util.ArrayList;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+
 
 public class Shooter{
 
@@ -12,12 +14,15 @@ public class Shooter{
     public float getWidth() {return width;}
     public float getHeight() {return height;}
 
-    public Shooter(){
-        projectile = new Projectile();
+    public Shooter(float x, float y, float width, float height){
+
     }
 
     public void fire(String robotFace){
-        projectile.update(robotFace);
-        projectile.display();
+
+    }
+
+    public void updatePos(float x, float y){
+
     }
 }
