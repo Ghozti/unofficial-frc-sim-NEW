@@ -13,11 +13,12 @@ public class Robot {
     float currentSpeed;
     String name;
     Chassis chassis;
+    Shooter shooter;
     String currentPeriodic;
     boolean auto = true;//wether or not autonomous is still active or not
 
-    //graphicsa
-    com.badlogic.gdx.math.Rectangle hitbox = new Rectangle();//projectile_hitbox
+    //graphics
+    com.badlogic.gdx.math.Rectangle hitbox;//projectile_hitbox
     Texture texture;
     float x,y;
     float width = 100f, length = 100f;
@@ -55,6 +56,17 @@ public class Robot {
 
     public void setX(float x){this.x = x;}
 
+    public void updateBot(float delta){
+        handleInput(delta);
+        shooter.updatePos(getX(),getY());
+        shooter.fire(translateLastPressedToDir());
+    }
+
+    public void buildShooter(Shooter shooter){
+        this.shooter = shooter;
+        this.shooter.projectile = new Projectile(shooter.x,shooter.y,30,30);
+    }
+
     public void buildChassis(Chassis chassis){
         this.chassis = chassis;
 
@@ -86,6 +98,20 @@ public class Robot {
     private String lastPressed = "";
     float ddelta;
     //test
+
+    private String translateLastPressedToDir(){
+        switch (lastPressed){
+            case "a":
+                return "W";
+            case "d":
+                return "E";
+            case "w":
+                return "N";
+            case "s":
+                return "S";
+        }
+        return "";
+    }
 
     public void handleInput(float delta){
         ddelta += delta;
@@ -129,6 +155,8 @@ public class Robot {
             chassis.rightSideEncoders.get(0).getAssignedMotor().updateSpeed(ddelta);
             chassis.leftSideEncoders.get(0).getAssignedMotor().updateSpeed(ddelta);
             x += chassis.leftSideEncoders.get(0).getSpeed() + chassis.rightSideEncoders.get(0).getSpeed();
+        }else if (Gdx.input.isKeyPressed(Input.Keys.SPACE)){
+            shooter.readyToFire = true;
         }
         hitbox.setPosition(getX(),getY());
         validatePosition();

@@ -13,6 +13,7 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 import robot.sim.field.Field;
 import robot.sim.hardware.Chassis;
 import robot.sim.hardware.Robot;
+import robot.sim.hardware.Shooter;
 
 public class GameLauncher implements Screen {
 
@@ -26,6 +27,7 @@ public class GameLauncher implements Screen {
     public GameLauncher(){
         robot = new Robot("sol");
         robot.buildChassis(new Chassis("west coast drive"));
+        robot.buildShooter(new Shooter(robot.getX(), robot.getY(), 30,30));
         field = new Field(robot);
         batch = new SpriteBatch();
         camera = new OrthographicCamera();

@@ -6,10 +6,11 @@ import com.badlogic.gdx.math.Rectangle;
 
 public class Projectile {
 
-    private float x, y, width, height, speed;//dimensions and position
-    private Texture texture;
-    private Rectangle hitbox;
+    float x, y, width, height, speed;//dimensions and position
+    Texture texture;
+    Rectangle hitbox;
     SpriteBatch batch = new SpriteBatch();
+    boolean outOfField;
 
     public float getX(){return x;}
     public float getY(){return y;}
@@ -21,6 +22,8 @@ public class Projectile {
     public Projectile(float x, float y, float width, float height){
         texture = new Texture("pixil-frame-0.png");
         hitbox = new Rectangle();
+        this.width = width;
+        this.height = height;
         hitbox.height = height;
         hitbox.width = width;
     }
@@ -29,8 +32,13 @@ public class Projectile {
         hitbox.x = x;
         hitbox.y = y;
         batch.begin();
-        batch.draw(texture,x,y,width,height);
+        batch.draw(texture, x, y, width, height);
         batch.end();
+    }
+
+    public void setPos(float x, float y){
+        this.x = x;
+        this.y = y;
     }
 
     public void moveX(float xchange){

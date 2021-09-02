@@ -35,7 +35,7 @@ public class Field {
     public void render(float delta){
         batch.begin();
         //batch.draw(texture,0,0,1280,720);//draws field
-        robot.handleInput(delta);
+        robot.updateBot(delta);
         batch.draw(robot.getTexture(),robot.getX(),robot.getY(),robot.getWidth(),robot.getLength());//draws robot
         //if (robot.getAuto()){
             //robot.startAutonomousPeriodic(delta);
