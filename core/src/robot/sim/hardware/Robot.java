@@ -13,7 +13,7 @@ public class Robot {
     float currentSpeed;
     String name;
     Chassis chassis;
-    Shooter shooter;
+    public Shooter shooter;
     String currentPeriodic;
     boolean auto = true;//wether or not autonomous is still active or not
 
@@ -58,7 +58,7 @@ public class Robot {
 
     public void updateBot(float delta){
         handleInput(delta);
-        shooter.updatePos(getX(),getY());
+        shooter.updatePos(getX(),getY()+45);
         shooter.fire(translateLastPressedToDir());
     }
 

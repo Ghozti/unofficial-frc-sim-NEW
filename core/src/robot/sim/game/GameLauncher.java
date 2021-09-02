@@ -27,7 +27,7 @@ public class GameLauncher implements Screen {
     public GameLauncher(){
         robot = new Robot("sol");
         robot.buildChassis(new Chassis("west coast drive"));
-        robot.buildShooter(new Shooter(robot.getX(), robot.getY(), 30,30));
+        robot.buildShooter(new Shooter(robot.getX(), robot.getY(), 10,10));
         field = new Field(robot);
         batch = new SpriteBatch();
         camera = new OrthographicCamera();

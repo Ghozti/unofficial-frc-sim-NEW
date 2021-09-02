@@ -56,7 +56,7 @@ public class Shooter{
         this.x = x;
         this.y = y;
         if (!readyToFire) {
-            projectile.setPos(x, y);
+            projectile.setPos(x, y-10);
         }
     }
 }
