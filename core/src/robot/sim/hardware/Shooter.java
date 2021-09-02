@@ -24,13 +24,16 @@ public class Shooter{
         this.height = height;
     }
 
+    String lockedFace = "";
+
     public void fire(String robotFace){
-        if (fired){
-            System.out.println("****");
-            return;
+        if (!fired) {
+            lockedFace = robotFace;
         }
         if (readyToFire){
             projectile.display();
+            fired = true;
+            robotFace = lockedFace;
             switch (robotFace){
                 case "N": //^
                     projectile.moveY(20);
@@ -45,7 +48,6 @@ public class Shooter{
                     projectile.moveX(-20);
                     return;
             }
-            fired = true;
         }
     }
 
