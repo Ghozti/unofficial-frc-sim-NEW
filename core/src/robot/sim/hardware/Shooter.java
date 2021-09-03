@@ -36,7 +36,7 @@ public class Shooter{
             robotFace = lockedFace;
             switch (robotFace){
                 case "N": //^
-                    projectile.moveY(1);
+                    projectile.moveY(20);
                     return;
                 case "S": //V
                     projectile.moveY(-20);
