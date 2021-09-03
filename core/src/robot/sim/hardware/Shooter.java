@@ -26,17 +26,17 @@ public class Shooter{
 
     String lockedFace = "";
 
-    public void fire(String robotFace){
+    public void updateProjectile(String robotFace){
+        projectile.display();
         if (!fired) {
             lockedFace = robotFace;
         }
         if (readyToFire && !projectile.outOfField){
-            projectile.display();
             fired = true;
             robotFace = lockedFace;
             switch (robotFace){
                 case "N": //^
-                    projectile.moveY(20);
+                    projectile.moveY(1);
                     return;
                 case "S": //V
                     projectile.moveY(-20);
@@ -56,7 +56,7 @@ public class Shooter{
         this.x = x;
         this.y = y;
         if (!readyToFire || projectile.outOfField) {
-            projectile.setPos(x, y-10);
+            projectile.setPos(x+37, y-10);
             projectile.outOfField = false;
             fired = false;
             readyToFire = false;

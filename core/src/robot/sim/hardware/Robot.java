@@ -3,10 +3,7 @@ package robot.sim.hardware;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Rectangle;
-
-import java.awt.*;
 
 public class Robot {
 
@@ -59,7 +56,7 @@ public class Robot {
     public void updateBot(float delta){
         handleInput(delta);
         shooter.updatePos(getX(),getY()+45);
-        shooter.fire(translateLastPressedToDir());
+        shooter.updateProjectile(translateLastPressedToDir());
     }
 
     public void buildShooter(Shooter shooter){
