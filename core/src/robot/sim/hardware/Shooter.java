@@ -30,7 +30,7 @@ public class Shooter{
         if (!fired) {
             lockedFace = robotFace;
         }
-        if (readyToFire){
+        if (readyToFire && !projectile.outOfField){
             projectile.display();
             fired = true;
             robotFace = lockedFace;

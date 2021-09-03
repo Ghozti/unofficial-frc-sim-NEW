@@ -41,6 +41,20 @@ public class Projectile {
         this.y = y;
     }
 
+    public void validatePos(){
+        if(getX() < 0){
+            outOfField = true;
+        }else if(getX() > 1179) {
+            outOfField = true;
+        }
+
+        if (getY() > 619){
+            outOfField = true;
+        }else if(getY() < .7){
+            outOfField = true;
+        }
+    }
+
     public void moveX(float xchange){
         x += xchange;
     }
