@@ -114,6 +114,7 @@ public class Robot {
         ddelta += delta;
         if(Gdx.input.isKeyPressed(Input.Keys.W)){
             if (!lastPressed.equals("w")){
+                texture = new Texture("solFront.png");
                 chassis.rightSideEncoders.get(0).getAssignedMotor().resetSpeed();
                 chassis.leftSideEncoders.get(0).getAssignedMotor().resetSpeed();
                 ddelta = 0;
@@ -124,6 +125,7 @@ public class Robot {
             y += chassis.leftSideEncoders.get(0).getSpeed() + chassis.rightSideEncoders.get(0).getSpeed();
         }else if(Gdx.input.isKeyPressed(Input.Keys.A)){
             if (!lastPressed.equals("a")){
+                texture = new Texture("sol.png");
                 chassis.rightSideEncoders.get(0).getAssignedMotor().resetSpeed();
                 chassis.leftSideEncoders.get(0).getAssignedMotor().resetSpeed();
                 ddelta = 0;
@@ -134,6 +136,7 @@ public class Robot {
             x += chassis.leftSideEncoders.get(0).getAssignedMotor().getInvertedSpeed() + chassis.rightSideEncoders.get(0).getAssignedMotor().getInvertedSpeed();
         }else if(Gdx.input.isKeyPressed(Input.Keys.S)){
             if (!lastPressed.equals("s")){
+                texture = new Texture("solBack.png");
                 chassis.rightSideEncoders.get(0).getAssignedMotor().resetSpeed();
                 chassis.leftSideEncoders.get(0).getAssignedMotor().resetSpeed();
                 ddelta = 0;
@@ -144,6 +147,7 @@ public class Robot {
             y += chassis.leftSideEncoders.get(0).getAssignedMotor().getInvertedSpeed() + chassis.rightSideEncoders.get(0).getAssignedMotor().getInvertedSpeed();
         }else if(Gdx.input.isKeyPressed(Input.Keys.D)){
             if (!lastPressed.equals("d")){
+                texture = new Texture("solRight.png");
                 chassis.rightSideEncoders.get(0).getAssignedMotor().resetSpeed();
                 chassis.leftSideEncoders.get(0).getAssignedMotor().resetSpeed();
                 ddelta = 0;
