@@ -42,24 +42,26 @@ public class Projectile {
     }
 
     public void validatePos(){
-        if(getX() < 0){
+        if(getX() <= 0){
             outOfField = true;
-        }else if(getX() > 1179) {
+        }else if(getX() >= 1179) {
             outOfField = true;
         }
 
-        if (getY() > 619){
+        if (getY() >= 619){
             outOfField = true;
-        }else if(getY() < .7){
+        }else if(getY() <= .7){
             outOfField = true;
         }
     }
 
     public void moveX(float xchange){
         x += xchange;
+        validatePos();
     }
 
     public void moveY(float ychange){
         y += ychange;
+        validatePos();
     }
 }

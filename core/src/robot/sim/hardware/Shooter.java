@@ -27,6 +27,9 @@ public class Shooter{
     String lockedFace = "";
 
     public void fire(String robotFace){
+        if (projectile.outOfField){
+            System.out.println("***");
+        }
         if (!fired) {
             lockedFace = robotFace;
         }
@@ -55,8 +58,11 @@ public class Shooter{
     public void updatePos(float x, float y){
         this.x = x;
         this.y = y;
-        if (!readyToFire) {
+        if (!readyToFire || projectile.outOfField) {
             projectile.setPos(x, y-10);
+            projectile.outOfField = false;
+            fired = false;
+            readyToFire = false;
         }
     }
 }
