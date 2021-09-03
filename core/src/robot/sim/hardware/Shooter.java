@@ -1,6 +1,7 @@
 package robot.sim.hardware;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 
@@ -14,6 +15,7 @@ public class Shooter{
     public float getY() {return y;}
     public float getWidth() {return width;}
     public float getHeight() {return height;}
+    public Projectile getProjectile(){return projectile;}
 
     public void setReadyToFire(boolean ready){readyToFire = ready;}
 
@@ -27,7 +29,7 @@ public class Shooter{
     String lockedFace = "";
 
     public void updateProjectile(String robotFace){
-        projectile.display();
+        //projectile.display(batch);
         if (!fired) {
             lockedFace = robotFace;
         }
