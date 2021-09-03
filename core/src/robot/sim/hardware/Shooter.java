@@ -27,9 +27,6 @@ public class Shooter{
     String lockedFace = "";
 
     public void fire(String robotFace){
-        if (projectile.outOfField){
-            System.out.println("***");
-        }
         if (!fired) {
             lockedFace = robotFace;
         }
