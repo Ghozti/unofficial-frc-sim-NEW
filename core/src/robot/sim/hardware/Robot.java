@@ -159,6 +159,13 @@ public class Robot {
             x += chassis.leftSideEncoders.get(0).getSpeed() + chassis.rightSideEncoders.get(0).getSpeed();
         }else if (Gdx.input.isKeyPressed(Input.Keys.SPACE)){
             shooter.readyToFire = true;
+            chassis.rightSideEncoders.get(0).getAssignedMotor().resetSpeed();
+            chassis.leftSideEncoders.get(0).getAssignedMotor().resetSpeed();
+            ddelta = 0;
+        }else {
+            chassis.rightSideEncoders.get(0).getAssignedMotor().resetSpeed();
+            chassis.leftSideEncoders.get(0).getAssignedMotor().resetSpeed();
+            ddelta = 0;
         }
         hitbox.setPosition(getX(),getY());
         validatePosition();
