@@ -13,7 +13,7 @@ public class Field {
     SpriteBatch batch;
 
     //boundingboxes
-    private Rectangle pole0, pole1,pole2,pole3;
+    private Rectangle scoreboard0, scoreboard1;
 
     //field robot
     robot.sim.hardware.Robot robot;
