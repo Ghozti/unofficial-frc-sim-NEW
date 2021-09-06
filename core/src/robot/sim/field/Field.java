@@ -11,6 +11,7 @@ public class Field {
     private Texture texture;
     float width,height,score;
     SpriteBatch batch;
+    boolean scoreIncrement;
 
     //boundingboxes
     public com.badlogic.gdx.math.Rectangle scoreboard0, scoreboard1;
@@ -25,13 +26,13 @@ public class Field {
 
         scoreboard0 = new com.badlogic.gdx.math.Rectangle();
         scoreboard0.y = 459;
-        scoreboard0.x = 0;
+        scoreboard0.x = 10;
         scoreboard0.width = 15;
         scoreboard0.height = (int)robot.getLength();
 
         scoreboard1 = new com.badlogic.gdx.math.Rectangle();
         scoreboard1.y = 150;
-        scoreboard1.x = 1265;
+        scoreboard1.x = 1260;
         scoreboard1.width = 15;
         scoreboard1.height = (int)robot.getLength();
 
@@ -47,10 +48,10 @@ public class Field {
     }
 
     public void updateScore(){
-        if (robot.shooter.getProjectile().detectCollision(scoreboard0,scoreboard1)){
+        if (robot.shooter.getProjectile().detectCollision(scoreboard0,scoreboard1) && !scoreIncrement){
             score++;
+            scoreIncrement = true;
         }
-
     }
 
     public void render(float delta){
@@ -59,6 +60,7 @@ public class Field {
         batch.draw(texture,0,0,1280,720);//draws field
         robot.updateBot(delta);
         updateScore();
+        scoreIncrement = robot.shooter.getProjectile().getOutOffield();
         robot.shooter.getProjectile().display(batch);
         batch.draw(robot.getTexture(),robot.getX(),robot.getY(),robot.getWidth(),robot.getLength());//draws robot
         //robot.shooter.projectile.display(batch);

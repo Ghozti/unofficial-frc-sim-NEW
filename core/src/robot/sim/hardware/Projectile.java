@@ -19,6 +19,7 @@ public class Projectile {
     public float getHeight(){return height;}
     public float getSpeed(){return speed;}
     public Rectangle getHitbox(){return hitbox;}
+    public boolean getOutOffield(){return outOfField;}
 
     public Projectile(float x, float y, float width, float height){
         texture = new Texture("pixil-frame-0.png");
@@ -70,5 +71,5 @@ public class Projectile {
     public void moveY(float ychange){
         y += ychange;
         validatePos();
-    }
+    }//TODO fix scoring 
 }
