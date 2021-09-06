@@ -9,11 +9,11 @@ public class Field {
 
     //graphics
     private Texture texture;
-    float width,height;
+    float width,height,score;
     SpriteBatch batch;
 
     //boundingboxes
-    private Rectangle scoreboard0, scoreboard1;
+    public com.badlogic.gdx.math.Rectangle scoreboard0, scoreboard1;
 
     //field robot
     robot.sim.hardware.Robot robot;
@@ -23,17 +23,19 @@ public class Field {
         texture = new Texture("infinite-recharge.jpg");
         batch = new SpriteBatch();
 
-        scoreboard0 = new Rectangle();
+        scoreboard0 = new com.badlogic.gdx.math.Rectangle();
         scoreboard0.y = 459;
         scoreboard0.x = 0;
         scoreboard0.width = 15;
         scoreboard0.height = (int)robot.getLength();
 
-        scoreboard1 = new Rectangle();
+        scoreboard1 = new com.badlogic.gdx.math.Rectangle();
         scoreboard1.y = 150;
         scoreboard1.x = 1265;
         scoreboard1.width = 15;
         scoreboard1.height = (int)robot.getLength();
+
+        score = 0;
     }
 
     public float getWidth(){
@@ -44,11 +46,19 @@ public class Field {
         return 720;
     }
 
+    public void updateScore(){
+        if (robot.shooter.getProjectile().detectCollision(scoreboard0,scoreboard1)){
+            score++;
+        }
+
+    }
+
     public void render(float delta){
-        System.out.println(robot.getX() + "   " + robot.getY());
+        System.out.println(score);
         batch.begin();
         batch.draw(texture,0,0,1280,720);//draws field
         robot.updateBot(delta);
+        updateScore();
         robot.shooter.getProjectile().display(batch);
         batch.draw(robot.getTexture(),robot.getX(),robot.getY(),robot.getWidth(),robot.getLength());//draws robot
         //robot.shooter.projectile.display(batch);

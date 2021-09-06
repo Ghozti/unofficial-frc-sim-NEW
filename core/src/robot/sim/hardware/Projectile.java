@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
+import robot.sim.field.Field;
 
 public class Projectile {
 
@@ -51,6 +52,14 @@ public class Projectile {
         }else if(getY() <= 0){
             outOfField = true;
         }
+    }
+
+    public boolean detectCollision(Rectangle hitbox1, Rectangle hitbox2){
+        if (hitbox.overlaps(hitbox1) || hitbox.overlaps(hitbox2)){
+            outOfField = true;
+            return true;
+        }
+        return false;
     }
 
     public void moveX(float xchange){
