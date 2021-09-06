@@ -22,6 +22,18 @@ public class Field {
         this.robot = robot;
         texture = new Texture("infinite-recharge.jpg");
         batch = new SpriteBatch();
+
+        scoreboard0 = new Rectangle();
+        scoreboard0.y = 459;
+        scoreboard0.x = 0;
+        scoreboard0.width = 15;
+        scoreboard0.height = (int)robot.getLength();
+
+        scoreboard1 = new Rectangle();
+        scoreboard1.y = 150;
+        scoreboard1.x = 1265;
+        scoreboard1.width = 15;
+        scoreboard1.height = (int)robot.getLength();
     }
 
     public float getWidth(){
@@ -33,6 +45,7 @@ public class Field {
     }
 
     public void render(float delta){
+        System.out.println(robot.getX() + "   " + robot.getY());
         batch.begin();
         batch.draw(texture,0,0,1280,720);//draws field
         robot.updateBot(delta);
