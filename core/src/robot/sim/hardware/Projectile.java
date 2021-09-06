@@ -42,13 +42,13 @@ public class Projectile {
     public void validatePos(){
         if(getX() <= 0){
             outOfField = true;
-        }else if(getX() >= 1179) {
+        }else if(getX() >= 1280) {
             outOfField = true;
         }
 
-        if (getY() >= 619){
+        if (getY() >= 720){
             outOfField = true;
-        }else if(getY() <= .7){
+        }else if(getY() <= 0){
             outOfField = true;
         }
     }
