@@ -1,4 +1,4 @@
-package robot.sim.hud;
+package robot.sim.menu;
 
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Texture;
