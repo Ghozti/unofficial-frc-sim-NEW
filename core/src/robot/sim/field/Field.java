@@ -8,7 +8,7 @@ import java.awt.*;
 public class Field {
 
     //graphics
-    public final float WIDTH = 1280, HEIGHT = 720;
+    public static final float WIDTH = 1280, HEIGHT = 720;
     private Texture texture;
     float score;
     SpriteBatch batch;
