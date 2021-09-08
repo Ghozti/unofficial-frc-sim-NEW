@@ -9,7 +9,7 @@ public class Field {
 
     //graphics
     private Texture texture;
-    float width,height,score;
+    float score;
     SpriteBatch batch;
     boolean scoreIncrement;
 
