@@ -3,6 +3,8 @@ package robot.sim.field;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import robot.sim.hardware.Robot;
+import robot.sim.hud.HUD;
+
 import java.awt.*;
 
 public class Field {
@@ -13,6 +15,7 @@ public class Field {
     float score;
     SpriteBatch batch;
     boolean scoreIncrement;
+    HUD hud;
 
     //boundingboxes
     public com.badlogic.gdx.math.Rectangle scoreboard0, scoreboard1;
@@ -38,6 +41,8 @@ public class Field {
         scoreboard1.height = (int)robot.getLength();
 
         score = 0;
+
+        hud = new HUD(70);
     }
 
     public float getWidth(){
@@ -56,7 +61,6 @@ public class Field {
     }
 
     public void render(float delta){
-        System.out.println(score);
         batch.begin();
         batch.draw(texture,0,0,1280,720);//draws field
         robot.updateBot(delta);
@@ -64,6 +68,7 @@ public class Field {
         scoreIncrement = robot.shooter.getProjectile().getOutOffield();
         robot.shooter.getProjectile().display(batch);
         batch.draw(robot.getTexture(),robot.getX(),robot.getY(),robot.getWidth(),robot.getLength());//draws robot
+        hud.draw(batch,Float.toString(score),100,100,getWidth()/3,false);
         //robot.shooter.projectile.display(batch);
         //if (robot.getAuto()){
             //robot.startAutonomousPeriodic(delta);
