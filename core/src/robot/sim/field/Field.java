@@ -68,7 +68,7 @@ public class Field {
         scoreIncrement = robot.shooter.getProjectile().getOutOffield();
         robot.shooter.getProjectile().display(batch);
         batch.draw(robot.getTexture(),robot.getX(),robot.getY(),robot.getWidth(),robot.getLength());//draws robot
-        hud.draw(batch,Float.toString(score),100,100,getWidth()/3,false);
+        hud.draw(batch,"Score: " + score,10,710,getWidth()/3,false);
         //robot.shooter.projectile.display(batch);
         //if (robot.getAuto()){
             //robot.startAutonomousPeriodic(delta);
