@@ -22,6 +22,9 @@ public class Field {
 
     //field robot
     robot.sim.hardware.Robot robot;
+
+    //timing
+    float elapsed_time;
     
     public Field(Robot robot){
         this.robot = robot;
@@ -43,6 +46,8 @@ public class Field {
         score = 0;
 
         hud = new HUD(70);
+
+        elapsed_time = 0;
     }
 
     public float getWidth(){
@@ -61,6 +66,7 @@ public class Field {
     }
 
     public void render(float delta){
+        elapsed_time += delta;
         batch.begin();
         batch.draw(texture,0,0,1280,720);//draws field
         robot.updateBot(delta);
@@ -69,10 +75,7 @@ public class Field {
         robot.shooter.getProjectile().display(batch);
         batch.draw(robot.getTexture(),robot.getX(),robot.getY(),robot.getWidth(),robot.getLength());//draws robot
         hud.draw(batch,"Score: " + score,10,710,getWidth()/3,false);
-        //robot.shooter.projectile.display(batch);
-        //if (robot.getAuto()){
-            //robot.startAutonomousPeriodic(delta);
-        //}
+        hud.draw(batch,"elapsed time: " + elapsed_time,10,680,getWidth()/3,false);
         batch.end();
     }
 }
