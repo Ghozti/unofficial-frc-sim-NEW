@@ -75,7 +75,7 @@ public class Field {
         robot.shooter.getProjectile().display(batch);
         batch.draw(robot.getTexture(),robot.getX(),robot.getY(),robot.getWidth(),robot.getLength());//draws robot
         hud.draw(batch,"Score: " + score,10,710,getWidth()/3,false);
-        hud.draw(batch,"elapsed time: " + elapsed_time,10,680,getWidth()/3,false);
+        hud.draw(batch,"elapsed time: " + elapsed_time,10,675,getWidth()/3,false);
         batch.end();
     }
 }
